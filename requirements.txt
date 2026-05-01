@@ -8,6 +8,9 @@ langchain-huggingface==0.0.3
 langchain-groq==0.1.9
 
 youtube-transcript-api==0.6.2
+yt-dlp==2024.8.6
+
 faiss-cpu==1.7.4
 sentence-transformers==2.7.0
+
 python-dotenv==1.0.1
