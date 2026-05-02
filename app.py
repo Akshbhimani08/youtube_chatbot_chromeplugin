@@ -23,9 +23,11 @@ load_dotenv()
 
 from langchain_huggingface import HuggingFaceEndpointEmbeddings
 
-embed_model = HuggingFaceEndpointEmbeddings(
-    huggingfacehub_api_token=os.getenv("HF_API_KEY"),
-    model="sentence-transformers/all-MiniLM-L6-v2"
+from langchain_cohere import CohereEmbeddings
+
+embed_model = CohereEmbeddings(
+    cohere_api_key=os.getenv("COHERE_API_KEY"),
+    model="embed-english-v3.0"
 )
 llm = ChatGroq(model="llama-3.1-8b-instant")
 
