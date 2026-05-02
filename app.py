@@ -10,8 +10,6 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_classic.retrievers import ContextualCompressionRetriever
-from langchain_classic.retrievers.document_compressors import LLMChainExtractor
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough, RunnableParallel
 from langchain_core.output_parsers import StrOutputParser
@@ -115,20 +113,13 @@ def ask_question(data: Query):
         vector_store = FAISS.from_documents(chunks, embed_model)
 
         # 5. Retriever with MMR
-        base_retriever = vector_store.as_retriever(
+        retriever = vector_store.as_retriever(
             search_type="mmr",
             search_kwargs={
                 "k": 5,
                 "fetch_k": 20,
                 "lambda_mult": 0.7
             }
-        )
-
-        # 6. Contextual compression
-        compressor = LLMChainExtractor.from_llm(llm)
-        retriever = ContextualCompressionRetriever(
-            base_compressor=compressor,
-            base_retriever=base_retriever
         )
 
         # 7. Prompt
@@ -167,5 +158,5 @@ Question: {question}
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
