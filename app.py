@@ -6,7 +6,7 @@ import requests
 import uvicorn
 
 # LangChain / RAG imports
-from langchain_huggingface import HuggingFaceEmbeddings
+
 from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -20,8 +20,12 @@ load_dotenv()
 # ─────────────────────────────────────────────
 # ✅ Load heavy models ONCE at startup
 # ─────────────────────────────────────────────
-embed_model = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
+
+embed_model = HuggingFaceEndpointEmbeddings(
+    huggingfacehub_api_token=os.getenv("HF_API_KEY"),
+    model="sentence-transformers/all-MiniLM-L6-v2"
 )
 llm = ChatGroq(model="llama-3.1-8b-instant")
 
