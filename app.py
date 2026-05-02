@@ -21,8 +21,6 @@ load_dotenv()
 # ✅ Load heavy models ONCE at startup
 # ─────────────────────────────────────────────
 
-from langchain_huggingface import HuggingFaceEndpointEmbeddings
-
 from langchain_cohere import CohereEmbeddings
 
 embed_model = CohereEmbeddings(
