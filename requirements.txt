@@ -6,9 +6,5 @@ langchain-core==0.2.32
 langchain-community==0.2.12
 langchain-huggingface==0.0.3
 langchain-groq==0.1.9
-
-faiss-cpu==1.13.2
-
 requests
 python-dotenv
-serpapi
