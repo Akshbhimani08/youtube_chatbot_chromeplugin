@@ -17,9 +17,9 @@ from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 load_dotenv()
 
-# ─────────────────────────────────────────────
-# ✅ Load heavy models ONCE at startup
-# ─────────────────────────────────────────────
+
+#Load heavy models ONCE at startup
+
 
 from langchain_cohere import CohereEmbeddings
 
@@ -32,9 +32,9 @@ llm = ChatGroq(model="llama-3.1-8b-instant")
 app = FastAPI()
 
 
-# ─────────────────────────────────────────────
-# ✅ SerpAPI Transcript Fetcher
-# ─────────────────────────────────────────────
+
+#  SerpAPI Transcript Fetcher
+
 def get_transcript(video_id: str) -> str:
     api_key = os.getenv("SERPAPI_API_KEY")
     if not api_key:
@@ -73,25 +73,25 @@ def get_transcript(video_id: str) -> str:
     return full_transcript
 
 
-# ─────────────────────────────────────────────
+
 # Request schema
-# ─────────────────────────────────────────────
+
 class Query(BaseModel):
     video_url: str
     question: str
 
 
-# ─────────────────────────────────────────────
+
 # Utility: extract video ID
-# ─────────────────────────────────────────────
+
 def extract_video_id(url: str):
     match = re.search(r"(?:v=|youtu\.be/)([0-9A-Za-z_-]{11})", url)
     return match.group(1) if match else None
 
 
-# ─────────────────────────────────────────────
+
 # MAIN API
-# ─────────────────────────────────────────────
+
 @app.post("/ask")
 def ask_question(data: Query):
     try:
