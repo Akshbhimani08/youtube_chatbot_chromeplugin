@@ -20,7 +20,7 @@ Watching a long YouTube video just to find one specific piece of information is 
 
 ## 🚀 Live Demo(Linkedin post with Live working Video)
 
--> [Click here to view the live working demo](https://www.linkedin.com/feed/update/urn:li:activity:7457797307330084864/)
+-> [Click here to view the live working & projects url](https://www.linkedin.com/feed/update/urn:li:activity:7457797307330084864/)
 
 ---
 
