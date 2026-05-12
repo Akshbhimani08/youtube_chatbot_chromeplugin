@@ -25,7 +25,7 @@ User (Chrome Extension Popup)
         │
         │  POST /ask  { video_url, question }
         ▼
-  FastAPI Backend  (Render / Docker)
+  FastAPI Backend  (Render)
         │
         ├── SerpAPI  →  Fetch video transcript
         ├── RecursiveCharacterTextSplitter  →  Chunk transcript
@@ -48,7 +48,6 @@ User (Chrome Extension Popup)
 | 🧠 **MMR Retrieval** | Maximal Marginal Relevance for diverse, high-quality context chunks |
 | ⚡ **Fast LLM** | Groq's `llama-3.1-8b-instant` for near-instant answers |
 | 🖥️ **Chrome Extension** | YouTube-themed popup UI with chat interface, Manifest V3 |
-| 🐳 **Dockerized** | Ready-to-deploy with Dockerfile and docker-compose |
 | ☁️ **Render Deployment** | Backend hosted on Render with dynamic port support |
 
 ---
@@ -59,8 +58,6 @@ User (Chrome Extension Popup)
 youtube-chatbot/
 ├── app.py                  # FastAPI backend — RAG pipeline, SerpAPI transcript fetch
 ├── requirements.txt        # Python dependencies
-├── Dockerfile              # Docker image for the backend
-├── docker-compose.yml      # Docker Compose for local deployment
 ├── cookies.txt             # YouTube cookies (for restricted video access)
 ├── .env                    # API keys (not committed)
 │
@@ -99,12 +96,6 @@ SERPAPI_API_KEY=your_serpapi_api_key
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
-```
-
-Or with Docker:
-
-```bash
-docker-compose up --build
 ```
 
 ### 4. Load the Chrome Extension
