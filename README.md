@@ -9,7 +9,6 @@ A Chrome Extension that lets you ask questions about any YouTube video in real t
 [![Cohere](https://img.shields.io/badge/Embeddings-Cohere-purple)](https://cohere.com/)
 [![FAISS](https://img.shields.io/badge/VectorDB-FAISS-blue)](https://faiss.ai/)
 [![Chrome Extension](https://img.shields.io/badge/Extension-Manifest%20V3-yellow?logo=googlechrome)](https://developer.chrome.com/docs/extensions/mv3/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)
 
 ---
 
