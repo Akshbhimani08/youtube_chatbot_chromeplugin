@@ -18,6 +18,12 @@ Watching a long YouTube video just to find one specific piece of information is 
 
 ---
 
+## 🚀 Live Demo(Linkedin post with Live working Video)
+
+-> [Click here to view the live working demo](https://www.linkedin.com/feed/update/urn:li:activity:7457797307330084864/)
+
+---
+
 ## Architecture
 
 ```
@@ -43,12 +49,12 @@ User (Chrome Extension Popup)
 
 | Feature | Detail |
 |---------|--------|
-| 🎬 **Transcript Extraction** | Fetches auto-generated captions via SerpAPI for any YouTube video |
-| 🔍 **RAG Pipeline** | Per-request FAISS index built from chunked transcript |
-| 🧠 **MMR Retrieval** | Maximal Marginal Relevance for diverse, high-quality context chunks |
-| ⚡ **Fast LLM** | Groq's `llama-3.1-8b-instant` for near-instant answers |
-| 🖥️ **Chrome Extension** | YouTube-themed popup UI with chat interface, Manifest V3 |
-| ☁️ **Render Deployment** | Backend hosted on Render with dynamic port support |
+|  **Transcript Extraction** | Fetches auto-generated captions via SerpAPI for any YouTube video |
+|  **RAG Pipeline** | Per-request FAISS index built from chunked transcript |
+|  **MMR Retrieval** | Maximal Marginal Relevance for diverse, high-quality context chunks |
+|  **Fast LLM** | Groq's `llama-3.1-8b-instant` for near-instant answers |
+|  **Chrome Extension** | YouTube-themed popup UI with chat interface, Manifest V3 |
+|  **Render Deployment** | Backend hosted on Render with dynamic port support |
 
 ---
 
